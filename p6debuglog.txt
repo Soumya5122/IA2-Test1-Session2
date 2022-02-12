@@ -1,0 +1,116 @@
+ gcc -g p6original.c 
+ ./a.out 
+Enter the string:
+hello
+The reverse of hello is olleh
+ ./a.out 
+Enter the string:
+piyush
+The reverse of piyush is hsuyip
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x85c: file p6original.c, line 29.
+(gdb) rn
+Target exec does not support this command.
+(gdb) r
+Starting program: /home/runner/ppa-IA2-practice2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p6original.c:29
+29  {
+(gdb) n
+31    input_string(str);
+(gdb) s
+input_string (a=0x7ffcf7f18b64 "OV") at p6original.c:5
+5     printf("Enter the string:\n");
+(gdb) 
+_IO_puts (str=0x564fa4000944 "Enter the string:") at ioputs.c:33
+33  ioputs.c: No such file or directory.
+(gdb) finsih
+Undefined command: "finsih".  Try "help".
+(gdb) f
+#0  _IO_puts (str=0x564fa4000944 "Enter the string:") at ioputs.c:33
+33  in ioputs.c
+(gdb) finish
+Run till exit from #0  _IO_puts (str=0x564fa4000944 "Enter the string:")
+    at ioputs.c:33
+Enter the string:
+input_string (a=0x7ffcf7f18b64 "OV") at p6original.c:6
+6     scanf("%s", a);
+Value returned is $1 = 18
+(gdb) n
+hello
+7   }
+(gdb) n
+main () at p6original.c:33
+33    str_reverse(str, rev_str);
+(gdb) i lo
+str = "hello\000\000\244OV"
+rev_str = "\000\000`\214\361\367\374\177\000"
+(gdb) s
+str_reverse (str=0x7ffcf7f18b64 "hello", rev_str=0x7ffcf7f18b6e "")
+    at p6original.c:12
+12    for (n = 0; str[n]; n++);
+(gdb) n
+13    n--;
+(gdb) 
+15    for (i = 0; str[i]; i++)
+(gdb) 
+17      rev_str[i] = str[n];
+(gdb) 
+18      n--;
+(gdb) 
+15    for (i = 0; str[i]; i++)
+(gdb) 
+17      rev_str[i] = str[n];
+(gdb) 
+18      n--;
+(gdb) 
+15    for (i = 0; str[i]; i++)
+(gdb) 
+17      rev_str[i] = str[n];
+(gdb) 
+18      n--;
+(gdb) 
+15    for (i = 0; str[i]; i++)
+(gdb) 
+17      rev_str[i] = str[n];
+(gdb) 
+18      n--;
+(gdb) 
+15    for (i = 0; str[i]; i++)
+(gdb) 
+17      rev_str[i] = str[n];
+(gdb) 
+18      n--;
+(gdb) 
+15    for (i = 0; str[i]; i++)
+(gdb) 
+20    rev_str[i] = '\0';
+(gdb) 
+21  }
+(gdb) 
+main () at p6original.c:34
+34    output(str, rev_str);
+(gdb) 
+The reverse of hello is olleh
+35    return 0;
+(gdb) c
+Continuing.
+[Inferior 1 (process 3975) exited normally]
+(gdb) 

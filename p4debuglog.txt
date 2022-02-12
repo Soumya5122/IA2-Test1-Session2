@@ -1,0 +1,132 @@
+ gcc -g p4original.c 
+ ./a.out 
+Enter the length of the array:
+5
+Enter all values of the array:
+1 2 7 8 12
+20
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8f8: file p4original.c, line 49.
+(gdb) r
+Starting program: /home/runner/ppa-IA2-practice2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:49
+49  {
+(gdb) n
+50    int length = input_array_size();
+(gdb) 
+Enter the length of the array:
+5
+51    int data[length];
+(gdb) p length
+$1 = 5
+(gdb) n
+52    input_array(length, data);
+(gdb) s
+input_array (n=5, a=0x7ffcf5753260) at p4original.c:13
+13    printf("Enter all values of the array:\n");
+(gdb) n
+Enter all values of the array:
+14    for (int i = 0; i < n; i++)
+(gdb) 
+16      scanf("%d", &a[i]);
+(gdb) 
+4
+14    for (int i = 0; i < n; i++)
+(gdb) 
+16      scanf("%d", &a[i]);
+(gdb) 
+2
+14    for (int i = 0; i < n; i++)
+(gdb) 
+16      scanf("%d", &a[i]);
+(gdb) 
+7
+14    for (int i = 0; i < n; i++)
+(gdb) 
+16      scanf("%d", &a[i]);
+(gdb) 
+8
+14    for (int i = 0; i < n; i++)
+(gdb) 
+16      scanf("%d", &a[i]);
+(gdb) 
+12
+14    for (int i = 0; i < n; i++)
+(gdb) 
+18  }
+(gdb) 
+main () at p4original.c:53
+53    int res = sum_composite_numbers(length, data);
+(gdb) p data
+$2 = {4, 2, 7, 8, 12}
+(gdb) s
+sum_composite_numbers (n=5, a=0x7ffcf5753260) at p4original.c:32
+32    int sum = 0;
+(gdb) n
+33    for (int i = 0; i < n; i++)
+(gdb) 
+35      if (is_composite(a[i]))
+(gdb) 
+37        sum += a[i];
+(gdb) 
+33    for (int i = 0; i < n; i++)
+(gdb) 
+35      if (is_composite(a[i]))
+(gdb) 
+33    for (int i = 0; i < n; i++)
+(gdb) 
+35      if (is_composite(a[i]))
+(gdb) 
+33    for (int i = 0; i < n; i++)
+(gdb) 
+35      if (is_composite(a[i]))
+(gdb) 
+37        sum += a[i];
+(gdb) 
+33    for (int i = 0; i < n; i++)
+(gdb) 
+35      if (is_composite(a[i]))
+(gdb) 
+37        sum += a[i];
+(gdb) 
+33    for (int i = 0; i < n; i++)
+(gdb) 
+40    return sum;
+(gdb) p sum
+$3 = 24
+(gdb) n
+41  }
+(gdb) 
+main () at p4original.c:54
+54    output(res);
+(gdb) s
+output (sum=24) at p4original.c:45
+45    printf("%d\n", sum);
+(gdb) n
+24
+46  }
+(gdb) 
+main () at p4original.c:55
+55    return 0;
+(gdb) c
+Continuing.
+[Inferior 1 (process 3325) exited normally]
+(gdb) 
