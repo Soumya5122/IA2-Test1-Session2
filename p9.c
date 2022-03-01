@@ -1,10 +1,10 @@
 #include<stdio.h>
 int input()
 {
-  int a,b,c,d; 
-  printf("enter a four numbers\n");
-  scanf("%d%d%d%d",&a,&b,&c,&d);
-  return 0;
+   int n;
+  printf("enter a  number\n");
+  scanf("%d",&n);
+  return n;
 }
 
 int add(int a,int b,int c,int d)
