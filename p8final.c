@@ -15,11 +15,11 @@ int input_n()
 
 Triangle input_triangle()
 {
-  Triangle ABC;
+  Triangle B;
   printf("Enter the base, altitude of a triangle:\n")
 ;
-  scanf("%f%f", &ABC.base, &ABC.altitude);
-  return ABC;
+  scanf("%f%f", &B.base, &B.altitude);
+  return B;
 }
 
 void input_n_triangles(int n, Triangle t[n])
