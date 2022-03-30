@@ -19,10 +19,10 @@ int gcd(int a, int b)
     while (rem)
     {
         rem = large - i * small;
-        if (rem < small)
+        if (rem<small)
         {
-            large = small;
-            small = rem;
+            large=small;
+            small=rem;
             i = 0;
         }
         i++;
