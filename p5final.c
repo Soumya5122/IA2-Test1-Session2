@@ -16,12 +16,12 @@ int gcd(int a, int b)
     s=a;
   else
     s=b;
-  for(i=1;i<=s;i++)
+  for(i=s;i>=1;i--)
     {
       if(a%i==0 && b%i==0)
-        gcd=i;
+        break;
     }
-    return gcd;
+    return i;
 }
 
 void output(int a, int b, int gcd)
